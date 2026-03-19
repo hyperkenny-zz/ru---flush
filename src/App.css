@@ -1,42 +1,62 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 768px) {
+  .ru-header-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    height: auto !important;
+    padding: 12px 16px !important;
+    gap: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .ru-nav {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    width: 100%;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .ru-nav button {
+    flex: 1 1 calc(50% - 6px) !important;
+    padding: 8px 4px !important;
+    font-size: 11px !important;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .ru-hero {
+    height: 180px !important;
+  }
 
-.read-the-docs {
-  color: #888;
+  .ru-hero-text {
+    left: 20px !important;
+    right: 20px !important;
+  }
+
+  .ru-hero-text h2 {
+    font-size: 22px !important;
+  }
+
+  .ru-search-inner {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .ru-search-inner input,
+  .ru-search-inner select {
+    flex: 1 1 100% !important;
+  }
+
+  .ru-main-grid {
+    grid-template-columns: 1fr !important;
+    padding: 16px !important;
+  }
+
+  .ru-toilet-item {
+    flex-wrap: wrap !important;
+  }
+
+  .ru-toilet-photo {
+    width: 100px !important;
+    height: 70px !important;
+  }
 }

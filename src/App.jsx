@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Star, MapPin, Search, X, Send, Loader2, ChevronRight } from 'lucide-react';
+import './App.css';
 
 const CAMPUSES = ['College Ave', 'Busch', 'Livingston', 'Cook/Douglass'];
 const RU_RED = '#CC0033';
@@ -122,7 +123,7 @@ export default function App() {
 
       {/* ── HEADER ── */}
       <header style={{ backgroundColor: '#fff', borderBottom: '3px solid #e5e5e5' }}>
-        <div style={{ maxWidth: '100%', margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 72 }}>
+        <div className="ru-header-inner" style={{ maxWidth: '100%', margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 72 }}>
           {/* Logo */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
             <div style={{ backgroundColor: RU_RED, borderRadius: 8, padding: '6px 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -139,7 +140,7 @@ export default function App() {
           </div>
 
           {/* Campus nav */}
-          <nav style={{ display: 'flex', gap: 4 }}>
+          <nav className="ru-nav" style={{ display: 'flex', gap: 4 }}>
             {CAMPUSES.map(campus => (
               <button
                 key={campus}
@@ -166,14 +167,14 @@ export default function App() {
       </header>
 
       {/* ── HERO ── */}
-      <div style={{ position: 'relative', height: 260, overflow: 'hidden' }}>
+      <div className="ru-hero" style={{ position: 'relative', height: 260, overflow: 'hidden' }}>
         <img
           src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1400"
           alt="Campus bathroom"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 60%, transparent 100%)' }} />
-        <div style={{ position: 'absolute', top: '50%', left: 48, transform: 'translateY(-50%)' }}>
+        <div className="ru-hero-text" style={{ position: 'absolute', top: '50%', left: 48, transform: 'translateY(-50%)' }}>
           <h2 style={{ color: '#fff', fontSize: 32, fontWeight: 900, margin: 0, lineHeight: 1.15 }}>
             Rutgers Campus<br />Bathroom Reviews
           </h2>
@@ -191,7 +192,7 @@ export default function App() {
 
       {/* ── SEARCH BAR ── */}
       <div style={{ backgroundColor: RU_RED, padding: '16px 0' }}>
-        <div style={{ maxWidth: '100%', margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', gap: 12 }}>
+        <div className="ru-search-inner" style={{ maxWidth: '100%', margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', gap: 12 }}>
           <span style={{ color: '#fff', fontSize: 12, fontWeight: 800, textTransform: 'uppercase', letterSpacing: 1, whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: 6 }}>
             <Search size={14} /> Search Bathrooms
           </span>
@@ -218,7 +219,7 @@ export default function App() {
       </div>
 
       {/* ── MAIN CONTENT ── */}
-      <div style={{ maxWidth: '100%', margin: '0 auto', padding: '28px 24px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24, alignItems: 'start' }}>
+      <div className="ru-main-grid" style={{ maxWidth: '100%', margin: '0 auto', padding: '28px 24px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24, alignItems: 'start' }}>
 
         {/* Left: Bathroom list */}
         <div>
@@ -248,7 +249,7 @@ export default function App() {
                     </div>
 
                     {/* Photo */}
-                    <div style={{ width: 130, height: 90, flexShrink: 0, borderRadius: 4, overflow: 'hidden', backgroundColor: '#eee' }}>
+                    <div className="ru-toilet-photo" style={{ width: 130, height: 90, flexShrink: 0, borderRadius: 4, overflow: 'hidden', backgroundColor: '#eee' }}>
                       <img
                         src={toilet.photo_url || 'https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=80&w=400'}
                         alt={toilet.name}
