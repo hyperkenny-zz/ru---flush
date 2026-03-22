@@ -5,6 +5,13 @@ import './App.css';
 const CAMPUSES = ['College Ave', 'Busch', 'Livingston', 'Cook/Douglass'];
 const RU_RED = '#CC0033';
 
+const CAMPUS_IMAGES = {
+  'College Ave': 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Rutgers_spelled_out_in_hedge_on_College_Ave_campus_New_Brunswick_NJ.JPG',
+  'Busch': 'https://commons.wikimedia.org/wiki/Special:FilePath/Rutgers_University_Visitors_Center_Busch_campus.JPG',
+  'Livingston': 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Rutgers_University_Livingston_campus_building_with_flags.JPG',
+  'Cook/Douglass': 'https://commons.wikimedia.org/wiki/Special:FilePath/2021-05-24_15_18_33_Front_view_of_Voorhees_Chapel_on_the_Douglass_College_campus_of_Rutgers_University_in_New_Brunswick,_Middlesex_County,_New_Jersey.jpg',
+};
+
 export default function App() {
   const [toilets, setToilets] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -169,14 +176,15 @@ export default function App() {
       {/* ── HERO ── */}
       <div className="ru-hero" style={{ position: 'relative', height: 260, overflow: 'hidden' }}>
         <img
-          src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1400"
-          alt="Campus bathroom"
+          key={activeCampus}
+          src={CAMPUS_IMAGES[activeCampus]}
+          alt={`${activeCampus} campus`}
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 60%, transparent 100%)' }} />
         <div className="ru-hero-text" style={{ position: 'absolute', top: '50%', left: 48, transform: 'translateY(-50%)' }}>
           <h2 style={{ color: '#fff', fontSize: 32, fontWeight: 900, margin: 0, lineHeight: 1.15 }}>
-            Rutgers Campus<br />Bathroom Reviews
+            {activeCampus} Campus<br />Bathroom Reviews
           </h2>
           <p style={{ color: '#ddd', fontSize: 14, marginTop: 10, marginBottom: 20, fontWeight: 400 }}>
             Find and rate the best (and worst) bathrooms on campus.
