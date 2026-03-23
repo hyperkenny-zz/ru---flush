@@ -133,13 +133,6 @@ export default function App() {
         <div className="ru-header-inner" style={{ maxWidth: '100%', margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 72 }}>
           {/* Logo */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-            <div style={{ backgroundColor: RU_RED, borderRadius: 8, padding: '6px 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Rutgers_Scarlet_Knights_logo.svg"
-                alt="Rutgers"
-                style={{ height: 36, width: 36, filter: 'brightness(0) invert(1)' }}
-              />
-            </div>
             <div>
               <div style={{ fontSize: 26, fontWeight: 900, color: RU_RED, letterSpacing: -1, lineHeight: 1 }}>RU FLUSH</div>
               <div style={{ fontSize: 10, fontWeight: 700, color: '#999', letterSpacing: 2, textTransform: 'uppercase' }}>Rutgers Bathroom Reviews</div>
