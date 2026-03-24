@@ -17,7 +17,15 @@
     width: 100%;
   }
 
-  .ru-nav button {
+  /* Request button: full width row on mobile */
+  .ru-request-btn {
+    width: 100% !important;
+    margin-right: 0 !important;
+    text-align: center;
+  }
+
+  /* Campus buttons: 2 per row */
+  .ru-nav button:not(.ru-request-btn) {
     flex: 1 1 calc(50% - 6px) !important;
     padding: 8px 4px !important;
     font-size: 11px !important;
@@ -51,12 +59,23 @@
     padding: 16px !important;
   }
 
-  .ru-toilet-item {
-    flex-wrap: wrap !important;
+  /* Toilet list item: smaller photo, hide Reviews button */
+  .ru-toilet-photo {
+    width: 80px !important;
+    height: 60px !important;
   }
 
-  .ru-toilet-photo {
-    width: 100px !important;
-    height: 70px !important;
+  .ru-reviews-btn {
+    display: none !important;
+  }
+
+  /* Form grids: stack to 1 column */
+  .ru-form-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Admin stats: stack to 1 column */
+  .admin-stats-grid {
+    grid-template-columns: 1fr !important;
   }
 }
